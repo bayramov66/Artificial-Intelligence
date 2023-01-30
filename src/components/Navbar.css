@@ -1,0 +1,10 @@
+.nav-link{
+    color: white;
+}
+.nav-link:hover{
+    color: white;
+}
+.btn{
+    background: #3A68B8;
+border-radius: 5px;
+}
