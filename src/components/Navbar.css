@@ -4,7 +4,81 @@
 .nav-link:hover{
     color: white;
 }
-.btn{
+.custom-btn{
     background: #3A68B8;
 border-radius: 5px;
+color: white;
+border-radius: 5px;
+padding: 10px;
+text-decoration: none;
+}
+
+.bars-icon {
+    color: white;
+    font-size: 34px;
+}
+
+             /* Overlay menyu */
+.overlay{
+    background-color: rgba(0,0,0,0.8);
+    height: 100vh;
+    position: fixed;
+    width: 0;
+    z-index: 2;
+    overflow-x: hidden;
+    transition: width 1.2s linear;
+}
+
+.aktiv{
+    width: 100%;
+}
+.cross-icon{
+    color: white;
+    font-size: 34px;
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    cursor: pointer;
+}
+
+.nav-links{
+display: flex;
+ align-items: center;
+justify-content: center; 
+height: 100vh;
+flex-direction: column;
+
+}
+
+.nav-links a{
+    font-size: 34px;
+    color:#aaa;
+    text-decoration: none;
+    transition: all 1.2s ease;
+}
+
+.nav-links a:hover{
+    color: white;
+    transform: translateX(70px);
+}
+.ucbucaq{
+    width: 16px;
+}
+.navbar{
+    padding: 20px 250px;
+}
+@media(max-width:1504px){
+
+    .navbar{
+        padding: 20px 150px;
+    }
+
+}
+
+@media(max-width:1016px){
+
+    .navbar{
+        padding: 20px;
+    }
+
 }

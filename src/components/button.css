@@ -1,0 +1,16 @@
+.my-custom-btn{
+    background: blue;
+    border-radius: 5px;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    margin-right: 14px;
+
+}
+
+.my-custom-btn:hover{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+   
+}

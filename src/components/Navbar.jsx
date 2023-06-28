@@ -1,43 +1,80 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import shekil from '../assets/images/logo.svg'
 import './Navbar.css'
+import Button from './Button'
+import {AiOutlineBars} from 'react-icons/ai'
+import {GiCrossedSwords} from 'react-icons/gi'
+
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
 
   // JSX elementleri icerisinde deyisen {} fiqurlu moterize icinde yazilir
 
+const overlayMenuUnvaniRef = useRef()
+
+const openOverlayMenu = (e) => {
+const kliknenenElement = e.target
+if(kliknenenElement.classList.contains('bars-icon')) {
+
+  overlayMenuUnvaniRef.current.classList.add('aktiv')
+}
+
+}
+
+const closeOverlayMenu = (e) => {
+  const kliknenenElement = e.target
+  if(kliknenenElement.classList.contains('cross-icon'))
+  overlayMenuUnvaniRef.current.classList.remove('aktiv')
+}
+
   return (
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src={shekil} alt="" /></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+<>
+
+    <div className='overlay' ref ={overlayMenuUnvaniRef}>
+<GiCrossedSwords className='cross-icon' onClick={closeOverlayMenu} />
+
+<div className="nav-links">
+  <a href="">Home</a>
+  <a href="">About</a>
+  <a href="">Service</a>
+  <a href="">Project</a>
+</div>
+
+    </div>
+    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <div className="container-fluid">
+      <className className="navbar-brand" href="#"><img src={shekil} alt="" /></className>
+      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <AiOutlineBars className='bars-icon' onClick={openOverlayMenu} />
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">Home</a>
+      <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          <li className="nav-item">
+            <a className="nav-link" aria-current="page" href="#">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+          <li className="nav-item">
+            <a className="nav-link" href="#">About</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Service</a>
+          <li className="nav-item">
+            <Link className="nav-link" to="Xidmetlerimiz">Service</Link>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Blog</a>
+          <li className="nav-item">
+            <Link className="nav-link" to="Bloglar">Blog</Link>
           </li>
           
-          <li class="nav-item">
-            <a class="nav-link">Contact</a>
+          <li className="nav-item">
+            <a className="nav-link">Contact</a>
           </li>
         </ul>
-<a class='btn btn-priamry'>Sign in</a>
-        
+
+        <Button butonunIcindekiYazi="Sign Up" className="btn btn-danger"/>
        
       </div>
     </div>
   </nav>
+</>
+
   )
 }
 
